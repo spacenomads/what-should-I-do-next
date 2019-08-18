@@ -1,0 +1,35 @@
+.app__result {
+  position: fixed;
+  width: 100vw;
+  background: rgba(255,255,255,.9);
+  z-index: 1;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  overflow: hidden;
+  height: 1px;
+  transtion: opacity ease .5s
+}
+.app__result-task {
+  transform: translateY(10%);
+  opacity: 0;
+  transition: opacity ease 1s, transform ease 1.4s;
+}
+.app__reset {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.app__result--visible {
+  height: 100vh;
+  opacity: 1;
+}
+.app__result--visible .app__result-task {
+  transform: translateY(0);
+  opacity: 1;
+}

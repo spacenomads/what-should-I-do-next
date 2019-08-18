@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>What should I do next?</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="app js__app">
+  <div class="app__content js__app-content">
+    <ol class="app__tasks">
+      <li class="app__task">
+        <label for="task--1" class="app__task-label">First task</label>
+        <input id="task--1" class="app__task-field js__app-field" data-index="0" type="text">
+      </li>
+      <li class="app__task">
+        <label for="task--2" class="app__task-label">Second task</label>
+        <input id="task--2" class="app__task-field js__app-field" data-index="1" type="text">
+      </li>
+      <li class="app__task">
+        <label for="task--3" class="app__task-label">Third task</label>
+        <input id="task--3" class="app__task-field js__app-field" data-index="2" type="text">
+      </li>
+    </ol>
+
+    <button class="app__choose-task js__app-btn js__app-btn--disabled" disabled>Choose task</button>
+  </div>
+  <section class="app__result js__app-result">
+    <h2 class="app__result-task js__app-result-task"></h2>
+    <button class="app__reset js__app-reset">Reset task list</button>
+  </section>
+  <script src="js/app.js"></script>
+</body>
+</html>
