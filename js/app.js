@@ -6,13 +6,59 @@ const chooseTaskBtn = app.querySelector('.js__app-btn');
 const appResult = app.querySelector('.js__app-result');
 const appResutlTask = app.querySelector('.js__app-result-task');
 const appReset = app.querySelector('.js__app-reset');
+const appHistoryList = app.querySelector('.js__app-history-items');
+const appDeleteHistoryBtn = app.querySelector('.js__app-delete-history');
+
 
 let tasks = {};
+let taskHistory = [];
+
+function deleteTasksHistory() {
+	taskHistory = [];
+	localStorage.removeItem('savedTasksHistory');
+	updateUserHistory();
+}
+
+function getTimestamp() {
+	const now = new Date();
+
+	const dd = (now.getDate() < 10) ? '0' + now.getDate() : now.getDate();
+	const mm = (now.getMonth() < 10) ? '0' + now.getMonth() : now.getMonth();
+	const yyyy = now.getFullYear();
+
+	return `${dd}.${mm}.${yyyy}`;
+}
+
+function updateUserHistory() {
+	let historyItems = '';
+	for (const item of taskHistory) {
+		historyItems += `
+			<li class="app__history-item">
+				<time class="app__history-item-timestamp">${item.date}</time>
+				<p class="app__history-item-label">${item.task}</p>
+			</li>
+		`;
+	}
+	appHistoryList.innerHTML = historyItems;
+}
+
+function addTaskToHistory(task) {
+	const newTaskData = {
+		date: getTimestamp(),
+		task: task
+	};
+	if (taskHistory.findIndex(el => (el.date === newTaskData.date && el.task === newTaskData.task)) < 0) {
+		taskHistory.push(newTaskData);
+		localStorage.setItem('savedTasksHistory', JSON.stringify(taskHistory));
+		updateUserHistory();
+	}
+}
 
 function showResult() {
 	const selectedTask = tasks.userTasks[tasks.selected];
 	appResutlTask.innerHTML = selectedTask;
 	appResult.classList.add('app__result--visible');
+	addTaskToHistory(selectedTask);
 }
 function hideResults() {
 	appResult.style.height = '100vh';
@@ -30,10 +76,8 @@ function writeSavedTasks() {
 function areWeDone() {
 	if (tasks.completed && tasks.selected) {
 		showResult();
-	} else if (tasks.completed) {
-		enableChooseTaskBtn();
 	} else {
-		disableChooseTaskBtn();
+		checkTasksCompletion();
 	}
 }
 
@@ -46,7 +90,12 @@ function initTaskData() {
 		selected: undefined,
 	};
 	writeSavedTasks();
-	areWeDone();
+}
+
+function initTaskHistory() {
+	const data = JSON.parse(localStorage.getItem('savedTasksHistory'));
+	taskHistory = data ? data : [];
+	updateUserHistory();
 }
 
 function saveData() {
@@ -101,6 +150,15 @@ function areTheTasksCompleted() {
 	return result;
 }
 
+function checkTasksCompletion() {
+	if (tasks.completed) {
+		enableChooseTaskBtn();
+	} else {
+		disableChooseTaskBtn();
+	}
+}
+
+
 function getTask(event) {
 	const field = event.currentTarget;
 	const index = parseInt(field.dataset.index);
@@ -110,6 +168,7 @@ function getTask(event) {
 	} else {
 		tasks.userTasks[index] = field.value;
 		tasks.completed = areTheTasksCompleted();
+		checkTasksCompletion();
 	}
 	saveData();
 }
@@ -138,7 +197,10 @@ function init() {
 	}
 	chooseTaskBtn.addEventListener('click', chooseOneTask);
 	appReset.addEventListener('click', resetApp);
+	appDeleteHistoryBtn.addEventListener('click', deleteTasksHistory);
+	initTaskHistory();
 	initTaskData();
+	areWeDone();
 }
 
 init();

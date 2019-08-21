@@ -11,7 +11,7 @@
   opacity: 0;
   overflow: hidden;
   height: 1px;
-  transtion: opacity ease .5s
+  transition: opacity ease .5s
 }
 .app__result-task {
   transform: translateY(10%);
