@@ -10,6 +10,8 @@ button {
 .app__taks-index {
   font-size: 12px;
   flex-basis: 1;
+  flex-grow: 0;
+  flex-shrink: 0;
   width: 24px;
   position: relative;
   display: flex;
@@ -25,6 +27,7 @@ button {
   overflow: hidden;
 }
 .app__task-field {
+  width: 100%;
   order: 1;
   border: 0;
   flex-grow: 1;

@@ -5,37 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>What should I do next?</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body class="app js__app">
   <main class="app__main js__app-main">
-    <section class="app__content js__app-content">
-      <ol class="app__tasks">
-        <li class="app__task">
-          <div class="app__taks-container">
-            <label for="task--1" class="app__task-label">First task</label>
-            <input id="task--1" class="app__task-field js__app-field" data-index="0" type="text" placeholder="What">
-            <div class="app__taks-index">1</div>
+    <section class="app__content tpl-screen js__app-content">
+      <header class="tpl-screen__intro">
+        <div class="tpl-wrapper">
+          <button class="tpl-screen__menu-trigger js__app-menu-trigger">Menu</button>
+          <h1 class="tpl-screen__title">What should I do next?</h1>
+          <div class="tpl-screen__description">
+            <p>Write 3 tasks and let me decide what to do if you find yourself kind of stuck.</p>
           </div>
-        </li>
-        <li class="app__task">
-          <div class="app__taks-container">
-            <label for="task--2" class="app__task-label">Second task</label>
-            <input id="task--2" class="app__task-field js__app-field" data-index="1" type="text" placeholder="Should">
-            <div class="app__taks-index">2</div>
-          </div>
-        </li>
-        <li class="app__task">
-          <div class="app__taks-container">
-            <label for="task--3" class="app__task-label">Third task</label>
-            <input id="task--3" class="app__task-field js__app-field" data-index="2" type="text" placeholder="I do next?">
-            <div class="app__taks-index">3</div>
-          </div>
-        </li>
-      </ol>
-
-      <button class="button app__choose-task js__app-btn js__app-btn--disabled" disabled>Choose task</button>
+        </div>
+      </header>
+      <div class="tpl-screen___content">
+        <div class="tpl-wrapper">
+          <ol class="app__tasks">
+            <li class="app__task">
+              <div class="app__taks-container">
+                <label for="task--1" class="app__task-label">First task</label>
+                <input id="task--1" class="app__task-field js__app-field" data-index="0" type="text" placeholder="What">
+                <div class="app__taks-index">1</div>
+              </div>
+            </li>
+            <li class="app__task">
+              <div class="app__taks-container">
+                <label for="task--2" class="app__task-label">Second task</label>
+                <input id="task--2" class="app__task-field js__app-field" data-index="1" type="text" placeholder="Should">
+                <div class="app__taks-index">2</div>
+              </div>
+            </li>
+            <li class="app__task">
+              <div class="app__taks-container">
+                <label for="task--3" class="app__task-label">Third task</label>
+                <input id="task--3" class="app__task-field js__app-field" data-index="2" type="text" placeholder="I do next?">
+                <div class="app__taks-index">3</div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <footer class="tpl-screen__cta">
+        <div class="tpl-wrapper">
+          <button class="button app__choose-task js__app-btn js__app-btn--disabled" disabled>Choose task</button>
+        </div>
+      </footer>
     </section>
     <section class="app__history js__app-history">
       <ol class="app__history-items js__app-history-items"></ol>
