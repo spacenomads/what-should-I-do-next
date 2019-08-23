@@ -1,3 +1,39 @@
+@import 'core.css';
+@import 'buttons.css';
+@import 'forms.css';
+
+/* > Screens */
+
+
+
+
+
+/* >> Main */
+.app__tasks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.app__task + .app__task {
+  margin-top: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* > Result */
 .app__result {
   position: fixed;
   width: 100vw;
@@ -11,7 +47,7 @@
   opacity: 0;
   overflow: hidden;
   height: 1px;
-  transition: opacity ease .5s
+  transition: opacity ease .5s;
 }
 .app__result-task {
   transform: translateY(10%);

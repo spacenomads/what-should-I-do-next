@@ -1,0 +1,28 @@
+/* APP */
+:root {
+  --color-black: #141115;
+  --color-pink: #ED007E;
+  --color-blue: #0CA6FF;
+  --color-white: #FFF;
+
+  --color-placeholder: #c5c4c5; 
+  --color-index-inactive: var(--color-pink);
+  --color-index: #aaa9ab;
+  --color-border: var(--color-black);
+  --color-border-focus: var(--color-pink);
+  --color-border-filled: #e2e2e3;
+  --color-button: var(--color-pink);
+  --color-button-hover: #d6007e;
+  --color-button-disabled: #a2a1a2;
+  --color-button-text-disabled: #d0d0d0;
+  --color-delete-button: var(--color-blue);
+  --color-delete-button-hover: #06588a;
+
+  --fa: "Font Awesome 5 Pro";
+}
+
+.app {
+  font-family: 'Open Sans', arial, sans-serif;
+  margin: 0;
+  color: var(--color-black);
+}

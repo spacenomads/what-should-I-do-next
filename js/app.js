@@ -13,6 +13,14 @@ const appDeleteHistoryBtn = app.querySelector('.js__app-delete-history');
 let tasks = {};
 let taskHistory = [];
 
+function checkFieldStatus(element) {
+	if (element.value) {
+		element.classList.add('app__task-field--filled');
+	} else {
+		element.classList.remove('app__task-field--filled');
+	}
+}
+
 function deleteTasksHistory() {
 	taskHistory = [];
 	localStorage.removeItem('savedTasksHistory');
@@ -100,7 +108,7 @@ function initTaskHistory() {
 
 function saveData() {
 	localStorage.setItem('savedTasks', JSON.stringify(tasks));
-} 
+}
 
 function chooseOneTask() {
 	const randomIndex = Math.floor(Math.random()*3);
@@ -168,6 +176,7 @@ function getTask(event) {
 	} else {
 		tasks.userTasks[index] = field.value;
 		tasks.completed = areTheTasksCompleted();
+		checkFieldStatus(field);
 		checkTasksCompletion();
 	}
 	saveData();
@@ -181,6 +190,7 @@ function resetApp() {
 
 	for (const field of fields) {
 		field.value = '';
+		field.classList.remove('app__task-field--filled');
 	}
 
 	disableChooseTaskBtn();

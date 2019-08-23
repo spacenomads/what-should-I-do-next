@@ -1,0 +1,58 @@
+/* > Forms */
+input,
+button {
+  font: inherit;
+}
+.app__taks-container {
+  display: flex;
+  height: 36px;
+}
+.app__taks-index {
+  font-size: 12px;
+  flex-basis: 1;
+  width: 24px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-index-inactive);
+}
+.app__task-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 1px;
+  overflow: hidden;
+}
+.app__task-field {
+  order: 1;
+  border: 0;
+  flex-grow: 1;
+  outline: none;
+  border-left: 1px solid var(--color-border); 
+  padding: 0 12px;
+  font-size: 24px;
+}
+.app__task-field::-webkit-input-placeholder {
+  color: var(--color-placeholder);
+}
+.app__task-field::-moz-placeholder {
+  color: var(--color-placeholder);
+}
+.app__task-field:-ms-input-placeholder {
+  color: var(--color-placeholder);
+}
+.app__task-field:-moz-placeholder {
+  color: var(--color-placeholder);
+}
+.app__task-field:focus {
+  border-left-color: var(--color-border-focus);
+}
+.app__task-field--filled {
+  border-left-color: var(--color-border-filled);
+}
+
+.app__task-field:focus + .app__taks-index,
+.app__task-field--filled + .app__taks-index{
+  color: var(--color-index);
+}
