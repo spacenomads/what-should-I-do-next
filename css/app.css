@@ -1,79 +1,8 @@
 @import 'core.css';
 @import 'buttons.css';
 @import 'forms.css';
+@import 'screens.css';
 
-/* > Screens */
-.tpl-wrapper {
-  margin: 0 48px;
-}
-.tpl-screen {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-
-.tpl-screen__intro {
-  padding-top: 84px;
-  position: relative;
-}
-.tpl-screen___content {
-  margin-top: 36px;
-}
-.tpl-screen__cta {
-  padding-bottom:48px;
-}
-.tpl-screen__menu-trigger {
-  position: absolute;
-  right: 0;
-  top: 24px;
-  width: 48px;
-  height: 1px;
-  padding: 47px 0 0;
-  border: 0;
-  overflow: hidden;
-  background-color: transparent;
-  cursor: pointer;
-}
-.tpl-screen__menu-trigger::after {
-  content: '\f142';
-  font-family: var(--fa);
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--color-pink);
-  font-size: 24px;
-}
-
-.tpl-screen__title {
-  font-size: 24px;
-  line-height: 36px;
-  margin: 0;
-  font-weight: bold;
-  position: relative;
-}
-.tpl-screen__title::before {
-  content: '';
-  height: 100%;
-  width: 6px;
-  position: absolute;
-  left: 0;
-  transform: translateX(-18px);
-  background-color: var(--color-pink);
-}
-.tpl-screen__description {
-  font-weight: 300;
-  font-size: 14px;
-
-  line-height: 24px;
-}
-
-.tpl-screen__description p {
-  margin: 0;
-}
-.tpl-screen__description p + p {
-  margin-top: 12px;
-}
 
 
 
@@ -92,50 +21,84 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* > Result */
-.app__result {
+.tpl-result {
   position: fixed;
   width: 100vw;
-  background: rgba(255,255,255,.9);
+  height: 100%;
+  background: rgba(255,255,255,.95);
   z-index: 1;
   left: 0;
   top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   opacity: 0;
   overflow: hidden;
   height: 1px;
   transition: opacity ease .5s;
 }
-.app__result-task {
+.tpl-result .tpl-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.tpl-result__task-container {
+  padding: 12px;
+  position: relative;
+  flex-grow: 1;
+  border: 1px solid var(--color-pink);
+  transform: translateY(-24px);
+}
+.tpl-result__task-label {
+  position: absolute;
+  color: var(--color-pink);
+  font-weight: 400;
+  left:0;
+  bottom: 100%;
+  margin-bottom: 4px;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  
+}
+.tpl-result__task {
   transform: translateY(10%);
   opacity: 0;
   transition: opacity ease 1s, transform ease 1.4s;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 48px;
 }
-.app__reset {
+.tpl-result__reset {
   position: absolute;
-  bottom: 1em;
+  right: 0;
+  top: 24px;
+  width: 48px;
+  height: 1px;
+  padding: 47px 0 0;
+  border: 0;
+  overflow: hidden;
+  background-color: transparent;
+  cursor: pointer;
+}
+.tpl-result__reset::after {
+  content: '\f00d';
+  font-family: var(--fa);
+  position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-pink);
+  font-size: 24px;
 }
 
-.app__result--visible {
+.tpl-result--visible {
   height: 100vh;
   opacity: 1;
 }
-.app__result--visible .app__result-task {
+.tpl-result--visible .tpl-result__task {
   transform: translateY(0);
   opacity: 1;
 }

@@ -65,12 +65,12 @@ function addTaskToHistory(task) {
 function showResult() {
 	const selectedTask = tasks.userTasks[tasks.selected];
 	appResutlTask.innerHTML = selectedTask;
-	appResult.classList.add('app__result--visible');
+	appResult.classList.add('tpl-result--visible');
 	addTaskToHistory(selectedTask);
 }
 function hideResults() {
 	appResult.style.height = '100vh';
-	appResult.classList.remove('app__result--visible');
+	appResult.classList.remove('tpl-result--visible');
 	setTimeout(function(){
 		appResult.removeAttribute('style');
 	}, 1500);

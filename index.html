@@ -58,9 +58,14 @@
       <button class="button app__delete-history js__app-delete-history"><span class="button__icon">Delete history</span></button>
     </section>
 
-    <section class="app__result js__app-result">
-      <h2 class="app__result-task js__app-result-task"></h2>
-      <button class="app__reset js__app-reset">Reset task list</button>
+    <section class="tpl-result js__app-result">
+      <div class="tpl-wrapper">
+        <div class="tpl-result__task-container">
+          <small class="tpl-result__task-label">Your next task is...</small>
+          <h2 class="tpl-result__task js__app-result-task"></h2>
+        </div>
+      </div>
+      <button class="tpl-result__reset js__app-reset">Reset task list</button>
     </section>
   </main>
   <nav class="app__menu">
