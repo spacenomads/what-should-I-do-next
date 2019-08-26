@@ -18,7 +18,7 @@ If you find this app useful, or you want to help a fellow one-eyed man, [conside
 
 Then a  cold beer will accompany me while coding stuff ;)
 
-<img src="img/1925.png" height="150">
+<img src="img/1925.png" height="150" alt="Beer: Alhambra 1925">
 
 ## Contribute
 
