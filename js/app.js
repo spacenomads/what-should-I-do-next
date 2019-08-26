@@ -215,6 +215,7 @@ function closeMenu() {
 function closeCurrentModal(event) {
 	const modal = event.currentTarget.closest('.tpl-modal--visible');
 	modal.style.height = '100%';
+	modal.style.zIndex = '4';
 	modal.classList.remove('tpl-modal--visible');
 	setTimeout(function(){
 		modal.removeAttribute('style');
@@ -228,7 +229,6 @@ function showModal(event) {
 	setTimeout(function(){
 		app.querySelector(modalIdSelector).classList.add('tpl-modal--visible');
 	}, 250);
-	
 }
 
 function initAppModals() {
@@ -241,9 +241,7 @@ function initAppModals() {
 }
 
 function initExternalLinks() {
-	console.log('entra');
 	for (const link of appExtLinks) {
-		console.log(link);
 		link.setAttribute('target', '_blank');
 		link.setAttribute('rel', 'external noopener noreferrer');
 	}
