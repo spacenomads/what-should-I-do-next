@@ -15,7 +15,7 @@
   transition: transform ease .5s, border-radius ease .2s, box-shadow ease .6s;
 }
 .app__main--with-menu {
-  transform: translateX(-330px);
+  transform: translateX(-272px);
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 0 12px rgba(0,0,0, .3);
@@ -28,7 +28,16 @@
 .app__task + .app__task {
   margin-top: 12px;
 }
-
+@media all and (min-width: 375px) {
+  .app__main--with-menu {
+    transform: translateX(-330px);
+  }
+}
+@media all and (min-width: 414px) {
+  .app__main--with-menu {
+    transform: translateX(-366px);
+  }
+}
 
 
 
@@ -146,16 +155,12 @@
 .tpl-menu__item {}
 .tpl-menu__link {
   font-weight: 600;
-  font-size: 28px;
+  font-size: 24px;
   color: currentColor;
   line-height: 48px;
   text-decoration: none;
   position: relative;
-  padding-right: 48px;
-  text-decorati
-  .tpl-menu__link::after {
-    content: 
-  }on: none;
+  text-decoration: none;
   text-transform: uppercase;
 }
 .tpl-menu__close {
@@ -187,10 +192,19 @@
 .tpl-menu__author {
   font-weight: 300;
   margin: 0;
+  font-size: 14px;
   line-height: 24px;
 }
 .tpl-menu__footer-link {
   color: currentColor;
+}
+@media all and (min-width: 375px) {
+  .tpl-menu__link {
+    font-size: 28px;
+  }
+  .tpl-menu__author {
+    font-size: 16px;
+  }
 }
 
 
