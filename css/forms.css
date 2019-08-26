@@ -2,6 +2,8 @@
 input,
 button {
   font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
 }
 .app__taks-container {
   display: flex;
