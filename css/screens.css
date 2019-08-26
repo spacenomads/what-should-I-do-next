@@ -18,6 +18,8 @@
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  position: relative;
+  z-index: 2;
 }
 
 
@@ -41,7 +43,8 @@
 
 
 /* >> Elements */
-.tpl-screen__menu-trigger {
+.tpl-screen__menu-trigger,
+.tpl-screen__modal-close {
   position: absolute;
   right: 0;
   top: 24px;
@@ -53,7 +56,8 @@
   background-color: transparent;
   cursor: pointer;
 }
-.tpl-screen__menu-trigger::after {
+.tpl-screen__menu-trigger::after,
+.tpl-screen__modal-close::after {
   content: '\f142';
   font-family: var(--fa);
   position: absolute;
@@ -92,4 +96,8 @@
 }
 .tpl-screen__description p + p {
   margin-top: 12px;
+}
+.tpl-screen__modal-close::after {
+  content: '\f00d';
+  color: var(--color-blue);
 }

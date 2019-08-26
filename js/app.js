@@ -11,6 +11,8 @@ const appHistoryList = app.querySelector('.js__app-history-items');
 const appDeleteHistoryBtn = app.querySelector('.js__app-delete-history');
 const appMenutrigger = app.querySelector('.js__app-menu-trigger');
 const appMenuClose = app.querySelector('.js__app-menu-close');
+const appModalCLose =  app.querySelector('.js__app-modal-close');
+const appMenuModal = app.querySelectorAll('.js__menu-modal');
 
 
 let tasks = {};
@@ -72,7 +74,7 @@ function showResult() {
 	addTaskToHistory(selectedTask);
 }
 function hideResults() {
-	appResult.style.height = '100vh';
+	appResult.style.height = '100%';
 	appResult.classList.remove('tpl-result--visible');
 	setTimeout(function(){
 		appResult.removeAttribute('style');
@@ -209,6 +211,31 @@ function closeMenu() {
 	appPage.classList.remove('app__main--with-menu');
 }
 
+function closeCurrentModal(event) {
+	const modal = event.currentTarget.closest('.tpl-modal--visible');
+	modal.style.height = '100%';
+	modal.classList.remove('tpl-modal--visible');
+	setTimeout(function(){
+		modal.removeAttribute('style');
+	}, 550);
+}
+
+function showModal(event) {
+	event.preventDefault();
+	const modalIdSelector = event.currentTarget.getAttribute('href');
+	appPage.classList.remove('app__main--with-menu');
+	setTimeout(function(){
+		app.querySelector(modalIdSelector).classList.add('tpl-modal--visible');
+	}, 250);
+	
+}
+
+function initMenuModals() {
+	for (const modal of appMenuModal) {
+		modal.addEventListener('click', showModal);
+	}
+}
+
 function init() {
 	html.classList.remove('no-js');
 	html.classList.add('js');
@@ -221,6 +248,8 @@ function init() {
 	appDeleteHistoryBtn.addEventListener('click', deleteTasksHistory);
 	appMenutrigger.addEventListener('click', openMenu);
 	appMenuClose.addEventListener('click', closeMenu);
+	appModalCLose.addEventListener('click', closeCurrentModal);
+	initMenuModals();
 	initTaskHistory();
 	initTaskData();
 	areWeDone();

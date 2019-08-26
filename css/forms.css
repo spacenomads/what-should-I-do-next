@@ -4,6 +4,7 @@ button {
   font: inherit;
   appearance: none;
   -webkit-appearance: none;
+  border-radius:0;
 }
 .app__taks-container {
   display: flex;

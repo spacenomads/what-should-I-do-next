@@ -10,6 +10,7 @@
 </head>
 <body class="app js__app">
   <main class="app__main js__app-main">
+    <!-- main screen  -->
     <section class="app__content tpl-screen js__app-content">
       <header class="tpl-screen__intro">
         <div class="tpl-wrapper">
@@ -53,9 +54,29 @@
         </div>
       </footer>
     </section>
-    <section class="app__history js__app-history">
-      <ol class="app__history-items js__app-history-items"></ol>
-      <button class="button app__delete-history js__app-delete-history"><span class="button__icon">Delete history</span></button>
+    
+    <!-- history screen -->
+    <section id="history" class="app__history tpl-screen tpl-modal js__app-history">
+      <header class="tpl-screen__intro">
+        <div class="tpl-wrapper">
+           <button class="tpl-screen__modal-close js__app-modal-close">Menu</button>
+          <h2 class="tpl-screen__title">Task history</h2>
+          <div class="tpl-screen__description">
+            <p>Your history begins on this page; here you can find every decision I made for you.</p>
+            <p>Also, you can clear them so no one will ever know :)</p>
+          </div>
+        </div>
+      </header>
+      <div class="tpl-screen___content">
+        <div class="tpl-wrapper">
+          <ol class="app__history-items js__app-history-items"></ol>
+        </div>
+      </div>
+      <footer class="tpl-screen__cta">
+        <div class="tpl-wrapper">
+          <button class="button app__delete-history js__app-delete-history"><span class="button__icon">Delete history</span></button>
+        </div>
+      </footer>
     </section>
 
     <section class="tpl-result js__app-result">
@@ -72,16 +93,16 @@
     <div class="tpl-wrapper">
       <ul class="tpl-menu__items">
         <li class="tpl-menu__item">
-          <a href="" class="tpl-menu__link">Instructions</a>
+          <a href="#instructions" class="tpl-menu__link js__menu-modal">Instructions</a>
         </li>
         <li class="tpl-menu__item">
-          <a href="" class="tpl-menu__link">Task History</a>
+          <a href="#history" class="tpl-menu__link js__menu-modal">Task History</a>
         </li>
         <li class="tpl-menu__item">
-          <a href="js__link-ext" class="tpl-menu__link" class="js__link-ext">Github project</a>
+          <a href="" class="tpl-menu__link js__link-ext">Github project</a>
         </li>
         <li class="tpl-menu__item">
-          <a href="https://www.paypal.me/guanaiman" class="tpl-menu__link js__link-ext">Donate</a>
+          <a href="#donate" class="tpl-menu__link js__menu-modal">Donate</a>
         </li>
       </ul>
       <button class="tpl-menu__close js__app-menu-close">Close menu</button>

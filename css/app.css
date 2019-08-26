@@ -1,6 +1,6 @@
 @import 'core.css';
-@import 'buttons.css';
 @import 'forms.css';
+@import 'buttons.css';
 @import 'screens.css';
 
 
@@ -39,14 +39,13 @@
   width: 100vw;
   height: 100%;
   background: rgba(255,255,255,.95);
-  z-index: 1;
   left: 0;
   top: 0;
   opacity: 0;
   overflow: hidden;
   height: 1px;
   transition: opacity ease .5s;
-  z-index: 3;
+  z-index: 4;
 }
 .tpl-result .tpl-wrapper {
   display: flex;
@@ -186,4 +185,53 @@
 }
 .tpl-menu__footer-link {
   color: currentColor;
+}
+
+
+
+
+
+/* >> Modals */
+.tpl-modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity ease .5s;
+}
+.tpl-modal--visible {
+  height: 100%;
+  opacity: 1;
+  z-index: 3;
+}
+
+
+
+/* >> History */
+.app__history .tpl-screen__title::before {
+  background-color: var(--color-blue);
+}
+.app__history-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.app__history-item + .app__history-item {
+  margin-top: 12px;
+}
+.app__history-item-timestamp {
+  font-weight: 300;
+  font-size: 12px;
+  color: #858486;
+  line-height: 12px;
+  transform: translateY(6px);
+  display: block;
+}
+.app__history-item-label {
+  line-height: 36px;
+  margin: 0;
 }
