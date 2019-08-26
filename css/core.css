@@ -20,7 +20,9 @@
 
   --fa: "Font Awesome 5 Pro";
 }
-
+html, body {
+  height: 100%;
+}
 .app {
   font-family: 'Open Sans', arial, sans-serif;
   margin: 0;
