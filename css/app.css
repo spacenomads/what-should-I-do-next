@@ -145,11 +145,17 @@
 }
 .tpl-menu__item {}
 .tpl-menu__link {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 28px;
   color: currentColor;
   line-height: 48px;
   text-decoration: none;
+  position: relative;
+  padding-right: 48px;
+  text-decorati
+  .tpl-menu__link::after {
+    content: 
+  }on: none;
   text-transform: uppercase;
 }
 .tpl-menu__close {
@@ -208,13 +214,14 @@
   opacity: 1;
   z-index: 3;
 }
+.tpl-modal .tpl-screen__title::before {
+  background-color: var(--color-blue);
+}
+
 
 
 
 /* >> History */
-.app__history .tpl-screen__title::before {
-  background-color: var(--color-blue);
-}
 .app__history-items {
   list-style: none;
   margin: 0;
@@ -234,4 +241,35 @@
 .app__history-item-label {
   line-height: 36px;
   margin: 0;
+}
+
+
+
+
+
+/* >> Donate */
+.app__donate {}
+.app__donate-link {
+  font-weight: 600;
+  color: var(--color-blue);
+  line-height: 48px;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  padding-right: 36px;
+  display: inline-block;
+}
+.app__donate-link::after {
+  content: '\f0fc';
+  font-weight: normal;
+  font-family: var(--fa);
+  position: absolute;
+  right: 12px;
+  top: 53%;
+  transform: translateY(-50%);
+}
+.app__donate-beer {
+  height: 230px;
+  display: block;
+  margin: 0 auto;
 }

@@ -67,6 +67,12 @@
   color: var(--color-pink);
   font-size: 24px;
 }
+.app__main--with-menu .tpl-screen__menu-trigger {
+  cursor: default;
+}
+.app__main--with-menu .tpl-screen__menu-trigger::after {
+  color: var(--color-icon-disabled);
+}
 
 .tpl-screen__title {
   font-size: 24px;

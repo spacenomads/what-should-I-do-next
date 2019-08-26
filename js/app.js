@@ -11,8 +11,9 @@ const appHistoryList = app.querySelector('.js__app-history-items');
 const appDeleteHistoryBtn = app.querySelector('.js__app-delete-history');
 const appMenutrigger = app.querySelector('.js__app-menu-trigger');
 const appMenuClose = app.querySelector('.js__app-menu-close');
-const appModalCLose =  app.querySelector('.js__app-modal-close');
+const appModalCLose =  app.querySelectorAll('.js__app-modal-close');
 const appMenuModal = app.querySelectorAll('.js__menu-modal');
+const appExtLinks = app.querySelectorAll('.js__link-ext');
 
 
 let tasks = {};
@@ -230,9 +231,21 @@ function showModal(event) {
 	
 }
 
-function initMenuModals() {
+function initAppModals() {
+	for (const modal of appModalCLose) {
+		modal.addEventListener('click', closeCurrentModal);
+	}
 	for (const modal of appMenuModal) {
 		modal.addEventListener('click', showModal);
+	}
+}
+
+function initExternalLinks() {
+	console.log('entra');
+	for (const link of appExtLinks) {
+		console.log(link);
+		link.setAttribute('target', '_blank');
+		link.setAttribute('rel', 'external noopener noreferrer');
 	}
 }
 
@@ -248,8 +261,8 @@ function init() {
 	appDeleteHistoryBtn.addEventListener('click', deleteTasksHistory);
 	appMenutrigger.addEventListener('click', openMenu);
 	appMenuClose.addEventListener('click', closeMenu);
-	appModalCLose.addEventListener('click', closeCurrentModal);
-	initMenuModals();
+	initExternalLinks();
+	initAppModals();
 	initTaskHistory();
 	initTaskData();
 	areWeDone();
