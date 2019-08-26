@@ -5,6 +5,7 @@
   --color-blue: #0CA6FF;
   --color-white: #FFF;
 
+  --color-icon-disabled: #c4c3c4;
   --color-placeholder: #c5c4c5; 
   --color-index-inactive: var(--color-pink);
   --color-index: #aaa9ab;

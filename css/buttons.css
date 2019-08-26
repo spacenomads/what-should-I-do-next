@@ -25,6 +25,7 @@
 .button__icon {
   position: relative;
   padding-left: 48px;
+  margin-left: -24px;
 }
 .button__icon::before {
   content: '\f2ed';
