@@ -1,6 +1,7 @@
 'use strict';
 const html = document.querySelector('html');
 const app = html.querySelector('.js__app');
+const appPage = app.querySelector('.js__app-main');
 const fields = app.querySelectorAll('.js__app-field');
 const chooseTaskBtn = app.querySelector('.js__app-btn');
 const appResult = app.querySelector('.js__app-result');
@@ -8,10 +9,20 @@ const appResutlTask = app.querySelector('.js__app-result-task');
 const appReset = app.querySelector('.js__app-reset');
 const appHistoryList = app.querySelector('.js__app-history-items');
 const appDeleteHistoryBtn = app.querySelector('.js__app-delete-history');
+const appMenutrigger = app.querySelector('.js__app-menu-trigger');
+const appMenuClose = app.querySelector('.js__app-menu-close');
 
 
 let tasks = {};
 let taskHistory = [];
+
+function checkFieldStatus(element) {
+	if (element.value) {
+		element.classList.add('app__task-field--filled');
+	} else {
+		element.classList.remove('app__task-field--filled');
+	}
+}
 
 function deleteTasksHistory() {
 	taskHistory = [];
@@ -57,12 +68,12 @@ function addTaskToHistory(task) {
 function showResult() {
 	const selectedTask = tasks.userTasks[tasks.selected];
 	appResutlTask.innerHTML = selectedTask;
-	appResult.classList.add('app__result--visible');
+	appResult.classList.add('tpl-result--visible');
 	addTaskToHistory(selectedTask);
 }
 function hideResults() {
 	appResult.style.height = '100vh';
-	appResult.classList.remove('app__result--visible');
+	appResult.classList.remove('tpl-result--visible');
 	setTimeout(function(){
 		appResult.removeAttribute('style');
 	}, 1500);
@@ -100,7 +111,7 @@ function initTaskHistory() {
 
 function saveData() {
 	localStorage.setItem('savedTasks', JSON.stringify(tasks));
-} 
+}
 
 function chooseOneTask() {
 	const randomIndex = Math.floor(Math.random()*3);
@@ -168,6 +179,7 @@ function getTask(event) {
 	} else {
 		tasks.userTasks[index] = field.value;
 		tasks.completed = areTheTasksCompleted();
+		checkFieldStatus(field);
 		checkTasksCompletion();
 	}
 	saveData();
@@ -181,11 +193,20 @@ function resetApp() {
 
 	for (const field of fields) {
 		field.value = '';
+		field.classList.remove('app__task-field--filled');
 	}
 
 	disableChooseTaskBtn();
 	saveData();
 	hideResults();
+}
+
+function openMenu() {
+	appPage.classList.add('app__main--with-menu');
+}
+
+function closeMenu() {
+	appPage.classList.remove('app__main--with-menu');
 }
 
 function init() {
@@ -198,6 +219,8 @@ function init() {
 	chooseTaskBtn.addEventListener('click', chooseOneTask);
 	appReset.addEventListener('click', resetApp);
 	appDeleteHistoryBtn.addEventListener('click', deleteTasksHistory);
+	appMenutrigger.addEventListener('click', openMenu);
+	appMenuClose.addEventListener('click', closeMenu);
 	initTaskHistory();
 	initTaskData();
 	areWeDone();

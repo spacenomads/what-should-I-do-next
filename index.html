@@ -5,55 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>What should I do next?</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body class="app js__app">
   <main class="app__main js__app-main">
-    <section class="app__content js__app-content">
-      <ol class="app__tasks">
-        <li class="app__task">
-          <label for="task--1" class="app__task-label">First task</label>
-          <input id="task--1" class="app__task-field js__app-field" data-index="0" type="text">
-        </li>
-        <li class="app__task">
-          <label for="task--2" class="app__task-label">Second task</label>
-          <input id="task--2" class="app__task-field js__app-field" data-index="1" type="text">
-        </li>
-        <li class="app__task">
-          <label for="task--3" class="app__task-label">Third task</label>
-          <input id="task--3" class="app__task-field js__app-field" data-index="2" type="text">
-        </li>
-      </ol>
-
-      <button class="app__choose-task js__app-btn js__app-btn--disabled" disabled>Choose task</button>
+    <section class="app__content tpl-screen js__app-content">
+      <header class="tpl-screen__intro">
+        <div class="tpl-wrapper">
+          <button class="tpl-screen__menu-trigger js__app-menu-trigger">Menu</button>
+          <h1 class="tpl-screen__title">What should I do next?</h1>
+          <div class="tpl-screen__description">
+            <p>Write 3 tasks and let me decide what to do if you find yourself kind of stuck.</p>
+          </div>
+        </div>
+      </header>
+      <div class="tpl-screen___content">
+        <div class="tpl-wrapper">
+          <ol class="app__tasks">
+            <li class="app__task">
+              <div class="app__taks-container">
+                <label for="task--1" class="app__task-label">First task</label>
+                <input id="task--1" class="app__task-field js__app-field" data-index="0" type="text" placeholder="What">
+                <div class="app__taks-index">1</div>
+              </div>
+            </li>
+            <li class="app__task">
+              <div class="app__taks-container">
+                <label for="task--2" class="app__task-label">Second task</label>
+                <input id="task--2" class="app__task-field js__app-field" data-index="1" type="text" placeholder="Should">
+                <div class="app__taks-index">2</div>
+              </div>
+            </li>
+            <li class="app__task">
+              <div class="app__taks-container">
+                <label for="task--3" class="app__task-label">Third task</label>
+                <input id="task--3" class="app__task-field js__app-field" data-index="2" type="text" placeholder="I do next?">
+                <div class="app__taks-index">3</div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <footer class="tpl-screen__cta">
+        <div class="tpl-wrapper">
+          <button class="button app__choose-task js__app-btn js__app-btn--disabled" disabled>Choose task</button>
+        </div>
+      </footer>
     </section>
     <section class="app__history js__app-history">
       <ol class="app__history-items js__app-history-items"></ol>
-      <button class="app__delete-history js__app-delete-history">Delete history</button>
+      <button class="button app__delete-history js__app-delete-history"><span class="button__icon">Delete history</span></button>
     </section>
 
-    <section class="app__result js__app-result">
-      <h2 class="app__result-task js__app-result-task"></h2>
-      <button class="app__reset js__app-reset">Reset task list</button>
+    <section class="tpl-result js__app-result">
+      <div class="tpl-wrapper">
+        <div class="tpl-result__task-container">
+          <small class="tpl-result__task-label">Your next task is...</small>
+          <h2 class="tpl-result__task js__app-result-task"></h2>
+        </div>
+      </div>
+      <button class="tpl-result__reset js__app-reset">Reset task list</button>
     </section>
   </main>
-  <nav class="app__menu">
-    <ul class="menu">
-      <li class="menu__item">
-        <a href="" class="menu__link">Instructions</a>
-      </li>
-      <li class="menu__item">
-        <a href="" class="menu__link">Task History</a>
-      </li>
-      <li class="menu__item">
-        <a href="js__link-ext" class="menu__link" class="js__link-ext">Github</a>
-      </li>
-      <li class="menu__item">
-        <a href="https://www.paypal.me/guanaiman" class="menu__link js__link-ext">Donate</a>
-      </li>
-    </ul>
-    <p class="app__author">2019 / <a href="https://spacenomads.com" class="js__link-ext">Space Nomads</a> - <a href="LICENSE.txt" class="js__link-ext">License</a></p>
+  <nav class="tpl-menu">
+    <div class="tpl-wrapper">
+      <ul class="tpl-menu__items">
+        <li class="tpl-menu__item">
+          <a href="" class="tpl-menu__link">Instructions</a>
+        </li>
+        <li class="tpl-menu__item">
+          <a href="" class="tpl-menu__link">Task History</a>
+        </li>
+        <li class="tpl-menu__item">
+          <a href="js__link-ext" class="tpl-menu__link" class="js__link-ext">Github project</a>
+        </li>
+        <li class="tpl-menu__item">
+          <a href="https://www.paypal.me/guanaiman" class="tpl-menu__link js__link-ext">Donate</a>
+        </li>
+      </ul>
+      <button class="tpl-menu__close js__app-menu-close">Close menu</button>
+      <footer class="tpl-menu__footer">
+        <p class="tpl-menu__author">2019 / <a href="https://spacenomads.com" class="tpl-menu__footer-link js__link-ext">Space Nomads</a> - <a href="LICENSE.txt" class="tpl-menu__footer-link js__link-ext">License</a></p>
+      </footer>
+    </div>
   </nav>
+  <script src="https://kit.fontawesome.com/52b23159d0.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
