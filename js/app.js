@@ -1,6 +1,7 @@
 'use strict';
 const html = document.querySelector('html');
 const app = html.querySelector('.js__app');
+const appPage = app.querySelector('.js__app-main');
 const fields = app.querySelectorAll('.js__app-field');
 const chooseTaskBtn = app.querySelector('.js__app-btn');
 const appResult = app.querySelector('.js__app-result');
@@ -8,6 +9,8 @@ const appResutlTask = app.querySelector('.js__app-result-task');
 const appReset = app.querySelector('.js__app-reset');
 const appHistoryList = app.querySelector('.js__app-history-items');
 const appDeleteHistoryBtn = app.querySelector('.js__app-delete-history');
+const appMenutrigger = app.querySelector('.js__app-menu-trigger');
+const appMenuClose = app.querySelector('.js__app-menu-close');
 
 
 let tasks = {};
@@ -198,6 +201,14 @@ function resetApp() {
 	hideResults();
 }
 
+function openMenu() {
+	appPage.classList.add('app__main--with-menu');
+}
+
+function closeMenu() {
+	appPage.classList.remove('app__main--with-menu');
+}
+
 function init() {
 	html.classList.remove('no-js');
 	html.classList.add('js');
@@ -208,6 +219,8 @@ function init() {
 	chooseTaskBtn.addEventListener('click', chooseOneTask);
 	appReset.addEventListener('click', resetApp);
 	appDeleteHistoryBtn.addEventListener('click', deleteTasksHistory);
+	appMenutrigger.addEventListener('click', openMenu);
+	appMenuClose.addEventListener('click', closeMenu);
 	initTaskHistory();
 	initTaskData();
 	areWeDone();
