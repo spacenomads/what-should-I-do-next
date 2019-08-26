@@ -1,0 +1,14 @@
+/* TEAM */
+Name: Carlos Mañas
+Site: https://spacenomads.com
+Twitter: oneeyedman
+Location: Alcorcón, Spain
+
+/* THANKS */
+Name: name or url
+
+/* SITE */
+Last update: 2019/08/26 
+Standards: HTML5, CSS3, JS
+Components: ESLint
+Software: VS Code, Opera, GitHub, Sketch, Marvel, Spotify, CodeClimate
