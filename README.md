@@ -2,7 +2,7 @@
 
 # What should I do next
 
-> 🎱Mini web app to make fast and random decisions about what to do next during vacation time.
+> 🎱 Mini web app to make fast and random decisions about what to do next during vacation time.
 
 Decisions are hard, but I find them even harder during vacation when I often find myself stuck between what task to do next.
 
