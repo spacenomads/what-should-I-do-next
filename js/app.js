@@ -247,7 +247,13 @@ function initExternalLinks() {
 	}
 }
 
+function setOfflineMode() {
+	app.classList.add('app--offline');
+}
+
 function init() {
+	const offline = !navigator.onLine;
+	offline && setOfflineMode();
 	html.classList.remove('no-js');
 	html.classList.add('js');
 

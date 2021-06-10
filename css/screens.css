@@ -393,3 +393,13 @@
   display: block;
   margin: 0 auto;
 }
+
+
+
+
+/* OFFLINE */
+.app--offline .js__link-ext {
+  text-decoration: line-through;
+  opacity: .5;
+  pointer-events: none;
+}
