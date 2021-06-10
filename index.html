@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>What should I do next?</title>
   <link rel="canonical" href="https://spacenomads.github.io/what-should-I-do-next/" />
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="author" href="humans.txt" />
   <link rel="manifest" href="manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -178,7 +179,9 @@
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
-        .register('service-worker.js')
+        .register('/what-should-I-do-next/service-worker.js', {
+          scope: '/what-should-I-do-next/'
+        })
         .then(function () {
           console.log('Hell Yee-haw! 🦄')
         });
