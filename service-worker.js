@@ -18,6 +18,7 @@ self.addEventListener('install', function (event) {
 				'./img/menu-disabled.svg',
 				'./img/close.svg',
 				'./img/close-white.svg',
+				'./img/reset.svg',
 				'./js/app.js'
 			]);
 		})
