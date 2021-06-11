@@ -1,24 +1,24 @@
 'use strict';
-importScripts('/what-should-I-do-next/cache-polyfill.js');
+importScripts('./cache-polyfill.js');
 
 
 self.addEventListener('install', function (event) {
 	event.waitUntil(
 		caches.open('airhorner').then(function (cache) {
 			return cache.addAll([
-				'/what-should-I-do-next/',
-				'/what-should-I-do-next/index.html',
-				'/what-should-I-do-next/css/app.css',
-				'/what-should-I-do-next/css/buttons.css',
-				'/what-should-I-do-next/css/core.css',
-				'/what-should-I-do-next/css/forms.css',
-				'/what-should-I-do-next/css/screens.css',
-				'/what-should-I-do-next/img/1925.png',
-				'/what-should-I-do-next/img/menu.svg',
-				'/what-should-I-do-next/img/menu-disabled.svg',
-				'/what-should-I-do-next/img/close.svg',
-				'/what-should-I-do-next/img/close-white.svg',
-				'/what-should-I-do-next/js/app.js'
+				'./',
+				'./index.html',
+				'./css/app.css',
+				'./css/buttons.css',
+				'./css/core.css',
+				'./css/forms.css',
+				'./css/screens.css',
+				'./img/1925.png',
+				'./img/menu.svg',
+				'./img/menu-disabled.svg',
+				'./img/close.svg',
+				'./img/close-white.svg',
+				'./js/app.js'
 			]);
 		})
 	);

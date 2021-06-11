@@ -179,8 +179,8 @@
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
-        .register('/what-should-I-do-next/service-worker.js', {
-          scope: '/what-should-I-do-next/'
+        .register('service-worker.js', {
+          scope: './'
         })
         .then(function () {
           console.log('Hell Yee-haw! 🦄')
