@@ -210,14 +210,15 @@
   cursor: pointer;
 }
 .tpl-result__reset::after {
-  content: '\f00d';
-  font-family: var(--fa);
+  content: '';
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  color: var(--color-pink);
-  font-size: 24px;
+  background: url(../img/reset.svg) center no-repeat;
+  background-size: auto 100%;
+  width: 24px;
+  height: 24px;
 }
 
 .tpl-result--visible {
